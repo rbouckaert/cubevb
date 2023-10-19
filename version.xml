@@ -1,0 +1,68 @@
+<package name='CubeVB' version='1.0.0'>
+	<depends on='BEAST.base' atleast='2.7.0'/>
+	<depends on='BEAST.app' atleast='2.7.0'/>
+
+	    <packageapp description="Trees2Cube"
+              class="cubevb.tool.Trees2Cube"
+              args=""
+              icon=""
+            />
+	    <packageapp description="Trees2SummaryTree"
+              class="cubevb.tool.Trees2SummaryTree"
+              args=""
+              icon=""
+            />
+
+    <service type="beastfx.app.treeannotator.services.TopologySettingService">
+        <provider classname="cubevb.tool.Trees2SummaryTree"/>
+    </service>
+
+	<service type="beast.base.core.BEASTInterface">
+        <!--provider classname="cubevb.transform.ConstrainedCubeTransform"/-->
+        <provider classname="cubevb.transform.CubeTransform"/>
+        <provider classname="cubevb.transform.SimpleCubeTransform"/>
+        <provider classname="cubevb.transform.MatrixTransform"/>
+        <provider classname="cubevb.transform.SimpleMatrixTransform"/>
+        <provider classname="cubevb.transform.Interval"/>
+        <provider classname="cubevb.transform.Log"/>
+        <provider classname="cubevb.transform.LogExpM1"/>
+        <provider classname="cubevb.transform.LogOdds"/>
+        <provider classname="cubevb.transform.LowerBound"/>
+        <provider classname="cubevb.transform.NoTransform"/>
+        <provider classname="cubevb.transform.StickBreaking"/>
+        <provider classname="cubevb.transform.SubRealParameter"/>
+        <provider classname="cubevb.transform.UpperBound"/>
+        <provider classname="cubevb.treelikelihood.BeagleTreeLikelihood"/>
+        <provider classname="cubevb.treelikelihood.SubsampledTreeLikelihood"/>
+        <provider classname="cubevb.treelikelihood.TreeLikelihood"/>
+        <provider classname="cubevb.operators.CubeSubTreeSlide"/>
+        <provider classname="cubevb.operators.CubeExchange"/>
+        <provider classname="cubevb.VIBySAandMCMC"/>
+    </service>
+    
+    
+
+
+	<!-- mappings from variatree package -->
+	<map from="variatree.VIBySAandMCMC" to="cubevb.VIBySAandMCMC"/>
+	<!--map from="variatree.transform.ConstrainedCubeTransform" to="cubevb.transform.ConstrainedCubeTransform"/-->
+	<map from="variatree.transform.CubeTransform" to="cubevb.transform.CubeTransform"/>
+	<map from="variatree.transform.SimpleCubeTransform" to="cubevb.transform.SimpleCubeTransform"/>
+	<map from="variatree.transform.MatrixTransform" to="cubevb.transform.MatrixTransform"/>
+	<map from="variatree.transform.SimpleMatrixTransform" to="cubevb.transform.SimpleMatrixTransform"/>
+	<map from="variatree.transform.Interval" to="cubevb.transform.Interval"/>
+	<map from="variatree.transform.Log" to="cubevb.transform.Log"/>
+	<map from="variatree.transform.LogExpM1" to="cubevb.transform.LogExpM1"/>
+	<map from="variatree.transform.LogOdds" to="cubevb.transform.LogOdds"/>
+	<map from="variatree.transform.LowerBound" to="cubevb.transform.LowerBound"/>
+	<map from="variatree.transform.NoTransform" to="cubevb.transform.NoTransform"/>
+	<map from="variatree.transform.StickBreaking" to="cubevb.transform.StickBreaking"/>
+	<map from="variatree.transform.SubRealParameter" to="cubevb.transform.SubRealParameter"/>
+	<map from="variatree.transform.UpperBound" to="cubevb.transform.UpperBound"/>
+	<map from="variatree.treelikelihood.BeagleTreeLikelihood" to="cubevb.treelikelihood.BeagleTreeLikelihood"/>
+	<map from="variatree.treelikelihood.SubsampledTreeLikelihood" to="cubevb.treelikelihood.SubsampledTreeLikelihood"/>
+	<map from="variatree.treelikelihood.TreeLikelihood" to="cubevb.treelikelihood.TreeLikelihood"/>
+	<map from="variatree.operators.CubeSubTreeSlide" to="cubevb.operators.CubeSubTreeSlide"/>
+	<map from="variatree.operators.CubeExchange" to="cubevb.operators.CubeExchange"/>
+    
+</package>
