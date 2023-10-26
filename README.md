@@ -4,9 +4,28 @@ This is a package for [BEAST 2](http://beast2.org) for variational Bayes on a cu
 
 It also contains a Matrix based summary tree topology provider that works with TreeAnnotator in BEAST v2.7.6.
 
-## Build
 
-Get code for beast2, BeastFX and cubevb. Then run
+## Installing
+
+Install [BEAST 2](http://beast2.org).
+
+Download [CubeVB.v1.0.0.zip](https://github.com/rbouckaert/cubevb/releases/download/v1.0.0/CubeVB.v1.0.0.zip). 
+Then, create a CubeVB subdirectory:
+
+```
+for Windows in Users\<YourName>\BEAST\2.7\CubeVB
+for Mac in /Users/<YourName>\/Library/Application Support/BEAST/2.7/CubeVB
+for Linux /home/<YourName>/.beast/2.7/CubeVB
+```
+
+Here `<YourName>` is the username you use.
+Unzip the file [CubeVB.v1.0.0.zip](https://github.com/rbouckaert/cubevb/releases/download/v1.0.0/CubeVB.v1.0.0.zip) in the newly created directory.
+
+
+## Build from code
+
+An alternative way to install is to build from the source code. 
+Frist, get code for beast2, BeastFX and CubeVB. Then run
 
 ```
 ant install
@@ -18,7 +37,7 @@ to install the package.
 
 Remco R. Bouckaert.
 Variational Bayesian Phylogenies through Matrix Representation of Tree Space
-2023 (awaiting preprint ling).
+2023 (https://www.biorxiv.org/content/10.1101/2023.10.19.563180v1).
 
 ## Data
 

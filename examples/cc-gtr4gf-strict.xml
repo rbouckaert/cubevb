@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.base.evolution.alignment:beast.pkgmgmt:beast.base.core:beast.base.inference:beast.base.evolution.tree.coalescent:beast.pkgmgmt:beast.base.core:beast.base.inference.util:beast.evolution.nuc:beast.base.evolution.operator:beast.base.inference.operator:beast.base.evolution.sitemodel:beast.base.evolution.substitutionmodel:beast.base.evolution.likelihood" required="BEAST.base v2.7.5" version="2.7">
+
+    <data
+id="dna"
+spec="Alignment"
+name="alignment">
+        <sequence id="seq_Carp" spec="Sequence" taxon="Carp" totalcount="4" value="ATGGCACACCCAACGCAACTAGGTTTCAAGGACGCGGCCATACCCGTTATAGAGGAACTTCTTCACTTCCACGACCACGCATTAATAATTGTGCTCCTAATTAGCACTTTAGTTTTATATATTATTACTGCAATGGTATCAACTAAACTTACTAATAAATATATTCTAGACTCCCAAGAAATCGAAATCGTATGAACCATTCTACCAGCCGTCATTTTAGTACTAATCGCCCTGCCCTCCCTACGCATCCTGTACCTTATAGACGAAATTAACGACCCTCACCTGACAATTAAAGCAATAGGACACCAATGATACTGAAGTTACGAGTATACAGACTATGAAAATCTAGGATTCGACTCCTATATAGTACCAACCCAAGACCTTGCCCCCGGACAATTCCGACTTCTGGAAACAGACCACCGAATAGTTGTTCCAATAGAATCCCCAGTCCGTGTCCTAGTATCTGCTGAAGACGTGCTACATTCTTGAGCTGTTCCATCCCTTGGCGTAAAAATGGACGCAGTCCCAGGACGACTAAATCAAGCCGCCTTTATTGCCTCACGCCCAGGGGTCTTTTACGGACAATGCTCTGAAATTTGTGGAGCTAATCACAGCTTTATACCAATTGTAGTTGAAGCAGTACCTCTCGAACACTTCGAAAACTGATCCTCATTAATACTAGAAGACGCCTCGCTAGGAAGCTAA"/>
+        <sequence id="seq_Chicken" spec="Sequence" taxon="Chicken" totalcount="4" value="ATGGCCAACCACTCCCAACTAGGCTTTCAAGACGCCTCATCCCCCATCATAGAAGAGCTCGTTGAATTCCACGACCACGCCCTGATAGTCGCACTAGCAATTTGCAGCTTAGTACTCTACCTTCTAACTCTTATACTTATAGAAAAACTATCA---TCAAACACCGTAGATGCCCAAGAAGTTGAACTAATCTGAACCATCCTACCCGCTATTGTCCTAGTCCTGCTTGCCCTCCCCTCCCTCCAAATCCTCTACATAATAGACGAAATCGACGAACCTGATCTCACCCTAAAAGCCATCGGACACCAATGATACTGAACCTATGAATACACAGACTTCAAGGACCTCTCATTTGACTCCTACATAACCCCAACAACAGACCTCCCCCTAGGCCACTTCCGCCTACTAGAAGTCGACCATCGCATTGTAATCCCCATAGAATCCCCCATTCGAGTAATCATCACCGCTGATGACGTCCTCCACTCATGAGCCGTACCCGCCCTCGGGGTAAAAACAGACGCAATCCCTGGACGACTAAATCAAACCTCCTTCATCACCACTCGACCAGGAGTGTTTTACGGACAATGCTCAGAAATCTGCGGAGCTAACCACAGCTACATACCCATTGTAGTAGAGTCTACCCCCCTAAAACACTTTGAAGCCTGATCCTCACTA------------------CTGTCATCTTAA"/>
+        <sequence id="seq_Cow" spec="Sequence" taxon="Cow" totalcount="4" value="ATGGCATATCCCATACAACTAGGATTCCAAGATGCAACATCACCAATCATAGAAGAACTACTTCACTTTCATGACCACACGCTAATAATTGTCTTCTTAATTAGCTCATTAGTACTTTACATTATTTCACTAATACTAACGACAAAGCTGACCCATACAAGCACGATAGATGCACAAGAAGTAGAGACAATCTGAACCATTCTGCCCGCCATCATCTTAATTCTAATTGCTCTTCCTTCTTTACGAATTCTATACATAATAGATGAAATCAATAACCCATCTCTTACAGTAAAAACCATAGGACATCAGTGATACTGAAGCTATGAGTATACAGATTATGAGGACTTAAGCTTCGACTCCTACATAATTCCAACATCAGAATTAAAGCCAGGGGAGCTACGACTATTAGAAGTCGATAATCGAGTTGTACTACCAATAGAAATAACAATCCGAATGTTAGTCTCCTCTGAAGACGTATTACACTCATGAGCTGTGCCCTCTCTAGGACTAAAAACAGACGCAATCCCAGGCCGTCTAAACCAAACAACCCTTATATCGTCCCGTCCAGGCTTATATTACGGTCAATGCTCAGAAATTTGCGGGTCAAACCACAGTTTCATACCCATTGTCCTTGAGTTAGTCCCACTAAAGTACTTTGAAAAATGATCTGCGTCAATATTA---------------------TAA"/>
+        <sequence id="seq_Frog" spec="Sequence" taxon="Frog" totalcount="4" value="ATGGCACACCCATCACAATTAGGTTTTCAAGACGCAGCCTCTCCAATTATAGAAGAATTACTTCACTTCCACGACCATACCCTCATAGCCGTTTTTCTTATTAGTACGCTAGTTCTTTACATTATTACTATTATAATAACTACTAAACTAACTAATACAAACCTAATGGACGCACAAGAGATCGAAATAGTGTGAACTATTATACCAGCTATTAGCCTCATCATAATTGCCCTTCCATCCCTTCGTATCCTATATTTAATAGATGAAGTTAATGATCCACACTTAACAATTAAAGCAATCGGCCACCAATGATACTGAAGCTACGAATATACTAACTATGAGGATCTCTCATTTGACTCTTATATAATTCCAACTAATGACCTTACCCCTGGACAATTCCGGCTGCTAGAAGTTGATAATCGAATAGTAGTCCCAATAGAATCTCCAACCCGACTTTTAGTTACAGCCGAAGACGTCCTCCACTCGTGAGCTGTACCCTCCTTGGGTGTCAAAACAGATGCAATCCCAGGACGACTTCATCAAACATCATTTATTGCTACTCGTCCGGGAGTATTTTACGGACAATGTTCAGAAATTTGCGGAGCAAACCACAGCTTTATACCAATTGTAGTTGAAGCAGTACCGCTAACCGACTTTGAAAACTGATCTTCATCAATACTA---GAAGCATCACTA------AGA"/>
+        <sequence id="seq_Human" spec="Sequence" taxon="Human" totalcount="4" value="ATGGCACATGCAGCGCAAGTAGGTCTACAAGACGCTACTTCCCCTATCATAGAAGAGCTTATCACCTTTCATGATCACGCCCTCATAATCATTTTCCTTATCTGCTTCCTAGTCCTGTATGCCCTTTTCCTAACACTCACAACAAAACTAACTAATACTAACATCTCAGACGCTCAGGAAATAGAAACCGTCTGAACTATCCTGCCCGCCATCATCCTAGTCCTCATCGCCCTCCCATCCCTACGCATCCTTTACATAACAGACGAGGTCAACGATCCCTCCCTTACCATCAAATCAATTGGCCACCAATGGTACTGAACCTACGAGTACACCGACTACGGCGGACTAATCTTCAACTCCTACATACTTCCCCCATTATTCCTAGAACCAGGCGACCTGCGACTCCTTGACGTTGACAATCGAGTAGTACTCCCGATTGAAGCCCCCATTCGTATAATAATTACATCACAAGACGTCTTGCACTCATGAGCTGTCCCCACATTAGGCTTAAAAACAGATGCAATTCCCGGACGTCTAAACCAAACCACTTTCACCGCTACACGACCGGGGGTATACTACGGTCAATGCTCTGAAATCTGTGGAGCAAACCACAGTTTCATGCCCATCGTCCTAGAATTAATTCCCCTAAAAATCTTTGAAATA---------------------GGGCCCGTATTTACCCTATAG"/>
+        <sequence id="seq_Loach" spec="Sequence" taxon="Loach" totalcount="4" value="ATGGCACATCCCACACAATTAGGATTCCAAGACGCGGCCTCACCCGTAATAGAAGAACTTCTTCACTTCCATGACCATGCCCTAATAATTGTATTTTTGATTAGCGCCCTAGTACTTTATGTTATTATTACAACCGTCTCAACAAAACTCACTAACATATATATTTTGGACTCACAAGAAATTGAAATCGTATGAACTGTGCTCCCTGCCCTAATCCTCATTTTAATCGCCCTCCCCTCACTACGAATTCTATATCTTATAGACGAGATTAATGACCCCCACCTAACAATTAAGGCCATGGGGCACCAATGATACTGAAGCTACGAGTATACTGATTATGAAAACTTAAGTTTTGACTCCTACATAATCCCCACCCAGGACCTAACCCCTGGACAATTCCGGCTACTAGAGACAGACCACCGAATGGTTGTTCCCATAGAATCCCCTATTCGCATTCTTGTTTCCGCCGAAGATGTACTACACTCCTGGGCCCTTCCAGCCATGGGGGTAAAGATAGACGCGGTCCCAGGACGCCTTAACCAAACCGCCTTTATTGCCTCCCGCCCCGGGGTATTCTATGGGCAATGCTCAGAAATCTGTGGAGCAAACCACAGCTTTATACCCATCGTAGTAGAAGCGGTCCCACTATCTCACTTCGAAAACTGGTCCACCCTTATACTAAAAGACGCCTCACTAGGAAGCTAA"/>
+        <sequence id="seq_Mouse" spec="Sequence" taxon="Mouse" totalcount="4" value="ATGGCCTACCCATTCCAACTTGGTCTACAAGACGCCACATCCCCTATTATAGAAGAGCTAATAAATTTCCATGATCACACACTAATAATTGTTTTCCTAATTAGCTCCTTAGTCCTCTATATCATCTCGCTAATATTAACAACAAAACTAACACATACAAGCACAATAGATGCACAAGAAGTTGAAACCATTTGAACTATTCTACCAGCTGTAATCCTTATCATAATTGCTCTCCCCTCTCTACGCATTCTATATATAATAGACGAAATCAACAACCCCGTATTAACCGTTAAAACCATAGGGCACCAATGATACTGAAGCTACGAATATACTGACTATGAAGACCTATGCTTTGATTCATATATAATCCCAACAAACGACCTAAAACCTGGTGAACTACGACTGCTAGAAGTTGATAACCGAGTCGTTCTGCCAATAGAACTTCCAATCCGTATATTAATTTCATCTGAAGACGTCCTCCACTCATGAGCAGTCCCCTCCCTAGGACTTAAAACTGATGCCATCCCAGGCCGACTAAATCAAGCAACAGTAACATCAAACCGACCAGGGTTATTCTATGGCCAATGCTCTGAAATTTGTGGATCTAACCATAGCTTTATGCCCATTGTCCTAGAAATGGTTCCACTAAAATATTTCGAAAACTGATCTGCTTCAATAATT---------------------TAA"/>
+        <sequence id="seq_Rat" spec="Sequence" taxon="Rat" totalcount="4" value="ATGGCTTACCCATTTCAACTTGGCTTACAAGACGCTACATCACCTATCATAGAAGAACTTACAAACTTTCATGACCACACCCTAATAATTGTATTCCTCATCAGCTCCCTAGTACTTTATATTATTTCACTAATACTAACAACAAAACTAACACACACAAGCACAATAGACGCCCAAGAAGTAGAAACAATTTGAACAATTCTCCCAGCTGTCATTCTTATTCTAATTGCCCTTCCCTCCCTACGAATTCTATACATAATAGACGAGATTAATAACCCAGTTCTAACAGTAAAAACTATAGGACACCAATGATACTGAAGCTATGAATATACTGACTATGAAGACCTATGCTTTGACTCCTACATAATCCCAACCAATGACCTAAAACCAGGTGAACTTCGTCTATTAGAAGTTGATAATCGGGTAGTCTTACCAATAGAACTTCCAATTCGTATACTAATCTCATCCGAAGACGTCCTGCACTCATGAGCCATCCCTTCACTAGGGTTAAAAACCGACGCAATCCCCGGCCGCCTAAACCAAGCTACAGTCACATCAAACCGACCAGGTCTATTCTATGGCCAATGCTCTGAAATTTGCGGCTCAAATCACAGCTTCATACCCATTGTACTAGAAATAGTGCCTCTAAAATATTTCGAAAACTGATCAGCTTCTATAATT---------------------TAA"/>
+        <sequence id="seq_Seal" spec="Sequence" taxon="Seal" totalcount="4" value="ATGGCATACCCCCTACAAATAGGCCTACAAGATGCAACCTCTCCCATTATAGAGGAGTTACTACACTTCCATGACCACACATTAATAATTGTGTTCCTAATTAGCTCATTAGTACTCTACATTATCTCACTTATACTAACCACGAAACTCACCCACACAAGTACAATAGACGCACAAGAAGTGGAAACGGTGTGAACGATCCTACCCGCTATCATTTTAATTCTCATTGCCCTACCATCATTACGAATCCTCTACATAATGGACGAGATCAATAACCCTTCCTTGACCGTAAAAACTATAGGACATCAGTGATACTGAAGCTATGAGTACACAGACTACGAAGACCTGAACTTTGACTCATATATGATCCCCACACAAGAACTAAAGCCCGGAGAACTACGACTGCTAGAAGTAGACAATCGAGTAGTCCTCCCAATAGAAATAACAATCCGCATACTAATCTCATCAGAAGATGTACTCCACTCATGAGCCGTACCGTCCCTAGGACTAAAAACTGATGCTATCCCAGGACGACTAAACCAAACAACCCTAATAACCATACGACCAGGACTGTACTACGGTCAATGCTCAGAAATCTGTGGTTCAAACCACAGCTTCATACCTATTGTCCTCGAATTGGTCCCACTATCCCACTTCGAGAAATGATCTACCTCAATGCTT---------------------TAA"/>
+        <sequence id="seq_Whale" spec="Sequence" taxon="Whale" totalcount="4" value="ATGGCATATCCATTCCAACTAGGTTTCCAAGATGCAGCATCACCCATCATAGAAGAGCTCCTACACTTTCACGATCATACACTAATAATCGTTTTTCTAATTAGCTCTTTAGTTCTCTACATTATTACCCTAATGCTTACAACCAAATTAACACATACTAGTACAATAGACGCCCAAGAAGTAGAAACTGTCTGAACTATCCTCCCAGCCATTATCTTAATTTTAATTGCCTTGCCTTCATTACGGATCCTTTACATAATAGACGAAGTCAATAACCCCTCCCTCACTGTAAAAACAATAGGTCACCAATGATATTGAAGCTATGAGTATACCGACTACGAAGACCTAAGCTTCGACTCCTATATAATCCCAACATCAGACCTAAAGCCAGGAGAACTACGATTATTAGAAGTAGATAACCGAGTTGTCTTACCTATAGAAATAACAATCCGAATATTAGTCTCATCAGAAGACGTACTCCACTCATGGGCCGTACCCTCCTTGGGCCTAAAAACAGATGCAATCCCAGGACGCCTAAACCAAACAACCTTAATATCAACACGACCAGGCCTATTTTATGGACAATGCTCAGAGATCTGCGGCTCAAACCACAGTTTCATACCAATTGTCCTAGAACTAGTACCCCTAGAAGTCTTTGAAAAATGATCTGTATCAATACTA---------------------TAA"/>
+    </data>
+
+    <map name="Uniform" >beast.base.inference.distribution.Uniform</map>
+
+    <map name="Exponential" >beast.base.inference.distribution.Exponential</map>
+
+    <map name="LogNormal" >beast.base.inference.distribution.LogNormalDistributionModel</map>
+
+    <map name="Normal" >beast.base.inference.distribution.Normal</map>
+
+    <map name="Beta" >beast.base.inference.distribution.Beta</map>
+
+    <map name="Gamma" >beast.base.inference.distribution.Gamma</map>
+
+    <map name="LaplaceDistribution" >beast.base.inference.distribution.LaplaceDistribution</map>
+
+    <map name="prior" >beast.base.inference.distribution.Prior</map>
+
+    <map name="InverseGamma" >beast.base.inference.distribution.InverseGamma</map>
+
+    <map name="OneOnX" >beast.base.inference.distribution.OneOnX</map>
+
+    <run id="mcmc" spec="MCMC" chainLength="1000000" sampleFromPrior="true">
+        <state id="state" spec="State" storeEvery="5000">
+            <tree id="Tree.t:dna" spec="beast.base.evolution.tree.Tree" name="stateNode">
+                <taxonset id="TaxonSet.dna" spec="TaxonSet">
+                    <alignment idref="dna"/>
+                </taxonset>
+            </tree>
+	        <parameter id="rateAC.s:dna" spec="parameter.RealParameter" lower="0.01" upper="20" name="stateNode">1.0</parameter>
+    	    <parameter id="rateAG.s:dna" spec="parameter.RealParameter" lower="0.01" upper="20" name="stateNode">1.0</parameter>
+        	<parameter id="rateAT.s:dna" spec="parameter.RealParameter" lower="0.01" upper="20" name="stateNode">1.0</parameter>
+	        <parameter id="rateCG.s:dna" spec="parameter.RealParameter" lower="0.01" upper="20" name="stateNode">1.0</parameter>
+    	    <parameter id="rateGT.s:dna" spec="parameter.RealParameter" lower="0.01" upper="20" name="stateNode">1.0</parameter>
+            <parameter id="freqParameter.s:dna" spec="parameter.RealParameter" dimension="4" lower="0.01" name="stateNode" upper="1.0">0.25</parameter>
+            <parameter id="gammaShape.s:dna" spec="parameter.RealParameter" lower="0.1" name="stateNode">1.0</parameter>
+            <parameter id="popSize.t:dna" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.3</parameter>
+        </state>
+
+        <init id="RandomTree.t:dna" spec="RandomTree" estimate="false" initial="@Tree.t:dna" taxa="@dna">
+            <populationModel id="ConstantPopulation0.t:dna" spec="ConstantPopulation">
+                <parameter id="randomPopSize.t:dna" spec="parameter.RealParameter" name="popSize">1.0</parameter>
+            </populationModel>
+        </init>
+
+        <distribution id="posterior" spec="CompoundDistribution">
+            <distribution id="prior" spec="CompoundDistribution">
+                <distribution id="CoalescentConstant.t:dna" spec="Coalescent">
+                    <populationModel id="ConstantPopulation.t:dna" spec="ConstantPopulation" popSize="@popSize.t:dna"/>
+                    <treeIntervals id="TreeIntervals.t:dna" spec="beast.base.evolution.tree.TreeIntervals" tree="@Tree.t:dna"/>
+                </distribution>
+                <prior id="FrequenciesPrior.s:dna" name="distribution" x="@freqParameter.s:dna">
+                    <distr id="Dirichlet.0" spec="distribution.Dirichlet">
+                        <parameter id="RealParameter.15" spec="parameter.RealParameter" dimension="4" estimate="false" name="alpha">4.0 4.0 4.0 4.0</parameter>
+                    </distr>
+                </prior>
+                <prior id="GammaShapePrior.s:dna" name="distribution" x="@gammaShape.s:dna">
+                    <Exponential id="Exponential.0" name="distr">
+                        <parameter id="RealParameter.0" spec="parameter.RealParameter" estimate="false" name="mean">1.0</parameter>
+                    </Exponential>
+                </prior>
+                <prior id="PopSizePrior.t:dna" name="distribution" x="@popSize.t:dna">
+                    <LogNormal id="LogNormalDistributionModel.0" name="distr">
+                        <parameter id="RealParameter.16" spec="parameter.RealParameter" estimate="false" name="M">0.1</parameter>
+                        <parameter id="RealParameter.17" spec="parameter.RealParameter" estimate="false" lower="0.0" name="S" upper="5.0">0.1</parameter>
+                    </LogNormal>
+                </prior>
+                <prior id="RateACPrior.s:dna" name="distribution" x="@rateAC.s:dna">
+                    <LogNormal name="distr" M="0.5" S="0.25" meanInRealSpace="true"/>
+                    <!--
+                    <Gamma id="Gamma.1" name="distr">
+                        <parameter id="RealParameter.3" spec="parameter.RealParameter" estimate="false" name="alpha">0.05</parameter>
+                        <parameter id="RealParameter.4" spec="parameter.RealParameter" estimate="false" name="beta">10.0</parameter>
+                    </Gamma>
+                    -->
+                </prior>
+                <prior id="RateAGPrior.s:dna" name="distribution" x="@rateAG.s:dna">
+                    <LogNormal name="distr" M="1.0" S="0.25" meanInRealSpace="true"/>
+                    <!--
+                    <Gamma id="Gamma.2" name="distr">
+                        <parameter id="RealParameter.5" spec="parameter.RealParameter" estimate="false" name="alpha">0.05</parameter>
+                        <parameter id="RealParameter.6" spec="parameter.RealParameter" estimate="false" name="beta">20.0</parameter>
+                    </Gamma>
+                    -->
+                </prior>
+                <prior id="RateATPrior.s:dna" name="distribution" x="@rateAT.s:dna">
+                    <LogNormal name="distr" M="0.5" S="0.25" meanInRealSpace="true"/>
+                    <!--
+                    <Gamma id="Gamma.1" name="distr">
+                        <parameter id="RealParameter.3" spec="parameter.RealParameter" estimate="false" name="alpha">0.05</parameter>
+                        <parameter id="RealParameter.4" spec="parameter.RealParameter" estimate="false" name="beta">10.0</parameter>
+                    </Gamma>
+                    -->
+                </prior>
+                <prior id="RateCGPrior.s:dna" name="distribution" x="@rateCG.s:dna">
+                    <LogNormal name="distr" M="0.5" S="0.25" meanInRealSpace="true"/>
+                    <!--
+                    <Gamma id="Gamma.1" name="distr">
+                        <parameter id="RealParameter.3" spec="parameter.RealParameter" estimate="false" name="alpha">0.05</parameter>
+                        <parameter id="RealParameter.4" spec="parameter.RealParameter" estimate="false" name="beta">10.0</parameter>
+                    </Gamma>
+                    -->
+                </prior>
+                <prior id="RateGTPrior.s:dna" name="distribution" x="@rateGT.s:dna">
+                    <LogNormal name="distr" M="0.5" S="0.25" meanInRealSpace="true"/>
+                    <!--
+                    <Gamma id="Gamma.1" name="distr">
+                        <parameter id="RealParameter.3" spec="parameter.RealParameter" estimate="false" name="alpha">0.05</parameter>
+                        <parameter id="RealParameter.4" spec="parameter.RealParameter" estimate="false" name="beta">10.0</parameter>
+                    </Gamma>
+                    -->
+                </prior>
+            </distribution>
+            <distribution id="likelihood" spec="CompoundDistribution" useThreads="true">
+                <distribution id="treeLikelihood.dna" spec="ThreadedTreeLikelihood" data="@dna" tree="@Tree.t:dna">
+                    <siteModel id="SiteModel.s:dna" spec="SiteModel" gammaCategoryCount="4" shape="@gammaShape.s:dna">
+                        <parameter id="mutationRate.s:dna" spec="parameter.RealParameter" estimate="false" lower="0.0" name="mutationRate">1.0</parameter>
+                        <parameter id="proportionInvariant.s:dna" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                        <substModel id="gtr.s:dna" spec="GTR" rateAC="@rateAC.s:dna" rateAG="@rateAG.s:dna" rateAT="@rateAT.s:dna" rateCG="@rateCG.s:dna" rateGT="@rateGT.s:dna">
+                            <parameter id="rateCT.s:dna" spec="parameter.RealParameter" estimate="false" lower="0.0" name="rateCT">1.0</parameter>
+                            <frequencies id="estimatedFreqs.s:dna" spec="Frequencies" frequencies="@freqParameter.s:dna"/>
+                        </substModel>
+                    </siteModel>
+                    <branchRateModel id="StrictClock.c:dna" spec="beast.base.evolution.branchratemodel.StrictClockModel">
+                        <parameter id="clockRate.c:dna" spec="parameter.RealParameter" estimate="false" lower="0.0" name="clock.rate">1.0</parameter>
+                    </branchRateModel>
+                </distribution>
+            </distribution>
+        </distribution>
+    	<operator id="RateACScaler.s:dna" spec="kernel.BactrianScaleOperator" parameter="@rateAC.s:dna" scaleFactor="0.5" upper="10.0" weight="0.1"/>
+        <operator id="RateAGScaler.s:dna" spec="kernel.BactrianScaleOperator" parameter="@rateAG.s:dna" scaleFactor="0.5" upper="10.0" weight="0.1"/>
+        <operator id="RateATScaler.s:dna" spec="kernel.BactrianScaleOperator" parameter="@rateAT.s:dna" scaleFactor="0.5" upper="10.0" weight="0.1"/>
+        <operator id="RateCGScaler.s:dna" spec="kernel.BactrianScaleOperator" parameter="@rateCG.s:dna" scaleFactor="0.5" upper="10.0" weight="0.1"/>
+        <operator id="RateGTScaler.s:dna" spec="kernel.BactrianScaleOperator" parameter="@rateGT.s:dna" scaleFactor="0.5" upper="10.0" weight="0.1"/>
+        <operator id="FrequenciesExchanger.s:dna" spec="operator.kernel.BactrianDeltaExchangeOperator" delta="0.01" weight="0.1">
+            <parameter idref="freqParameter.s:dna"/>
+        </operator>
+        <operator id="gammaShapeScaler.s:dna" spec="kernel.BactrianScaleOperator" parameter="@gammaShape.s:dna" scaleFactor="0.5" upper="10.0" weight="0.1"/>
+
+        <operator id="CoalescentConstantBICEPSEpochTop.t:dna" spec="EpochFlexOperator" scaleFactor="0.1" tree="@Tree.t:dna" weight="2.0"/>
+        <operator id="CoalescentConstantBICEPSEpochAll.t:dna" spec="EpochFlexOperator" fromOldestTipOnly="false" scaleFactor="0.1" tree="@Tree.t:dna" weight="2.0"/>
+        <operator id="CoalescentConstantBICEPSTreeFlex.t:dna" spec="TreeStretchOperator" scaleFactor="0.01" tree="@Tree.t:dna" weight="2.0"/>
+        <operator id="CoalescentConstantTreeRootScaler.t:dna" spec="kernel.BactrianScaleOperator" rootOnly="true" scaleFactor="0.1" tree="@Tree.t:dna" upper="10.0" weight="3.0"/>
+        <operator id="CoalescentConstantUniformOperator.t:dna" spec="kernel.BactrianNodeOperator" tree="@Tree.t:dna" weight="30.0"/>
+        <operator id="CoalescentConstantSubtreeSlide.t:dna" spec="kernel.BactrianSubtreeSlide" tree="@Tree.t:dna" weight="15.0"/>
+        <operator id="CoalescentConstantNarrow.t:dna" spec="Exchange" tree="@Tree.t:dna" weight="15.0"/>
+        <operator id="CoalescentConstantWide.t:dna" spec="Exchange" isNarrow="false" tree="@Tree.t:dna" weight="3.0"/>
+        <operator id="CoalescentConstantWilsonBalding.t:dna" spec="WilsonBalding" tree="@Tree.t:dna" weight="3.0"/>
+        <operator id="PopSizeScaler.t:dna" spec="kernel.BactrianScaleOperator" parameter="@popSize.t:dna" upper="10.0" weight="3.0"/>
+        <logger id="tracelog" spec="Logger" fileName="$(filebase).log" logEvery="10000" model="@posterior" sanitiseHeaders="true" sort="smart">
+            <log idref="posterior"/>
+            <log idref="likelihood"/>
+            <log idref="prior"/>
+            <log idref="treeLikelihood.dna"/>
+            <log id="TreeHeight.t:dna" spec="beast.base.evolution.tree.TreeStatLogger" tree="@Tree.t:dna"/>
+            <log idref="rateAC.s:dna"/>
+            <log idref="rateAG.s:dna"/>
+            <log idref="rateAT.s:dna"/>
+            <log idref="rateCG.s:dna"/>
+            <log idref="rateGT.s:dna"/>
+            <log idref="freqParameter.s:dna"/>
+            <log idref="gammaShape.s:dna"/>
+            <log idref="popSize.t:dna"/>
+            <log idref="CoalescentConstant.t:dna"/>
+        </logger>
+        <logger id="screenlog" spec="Logger" logEvery="100000">
+            <log idref="posterior"/>
+            <log idref="likelihood"/>
+            <log idref="prior"/>
+        </logger>
+        <logger id="treelog.t:dna" spec="Logger" fileName="$(filebase).trees" logEvery="10000" mode="tree">
+            <log id="TreeWithMetaDataLogger.t:dna" spec="beast.base.evolution.TreeWithMetaDataLogger" tree="@Tree.t:dna"/>
+        </logger>
+        <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>
+    </run>
+
+</beast>
