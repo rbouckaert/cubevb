@@ -9,7 +9,7 @@ It also contains a Matrix based summary tree topology provider that works with T
 
 Install [BEAST 2](http://beast2.org).
 
-Download [CubeVB.v1.0.0.zip](https://github.com/rbouckaert/cubevb/releases/download/v1.0.0/CubeVB.v1.0.0.zip). 
+Download [CubeVB.v1.0.1.zip](https://github.com/rbouckaert/cubevb/releases/download/v1.0.0/CubeVB.v1.0.1.zip). 
 Then, create a CubeVB subdirectory:
 
 ```
@@ -19,7 +19,7 @@ for Linux /home/<YourName>/.beast/2.7/CubeVB
 ```
 
 Here `<YourName>` is the username you use.
-Unzip the file [CubeVB.v1.0.0.zip](https://github.com/rbouckaert/cubevb/releases/download/v1.0.0/CubeVB.v1.0.0.zip) in the newly created directory.
+Unzip the file [CubeVB.v1.0.0.zip](https://github.com/rbouckaert/cubevb/releases/download/v1.0.0/CubeVB.v1.0.1.zip) in the newly created directory.
 
 
 ## Build from code
@@ -32,6 +32,32 @@ ant install
 ```
 
 to install the package.
+
+## Visualising matrix space
+
+The `MatrixTreeViewer` app that comes with this package allows you to change a distance matrix for a 4 taxon tree.
+
+To launch, use the applauncher tool that comes with BEAST, or via the BEAUti using the <<File/Launch apps>> menu, or via the command line using:
+
+```
+/path/to/beast/bin/appplauncher MatrixTreeViewer
+```
+
+![](doc/images/MatrixTreeViewer.png)
+
+## Visualising cube space
+
+
+The `CubeTreeViewer` app that comes with this package allows you to change a distance cube for a 6 taxon tree.
+
+To launch, use the applauncher tool that comes with BEAST, or via the BEAUti using the <<File/Launch apps>> menu, or via the command line using:
+
+```
+/path/to/beast/bin/appplauncher CubeTreeViewer
+```
+
+![](doc/images/CubeTreeViewer.png)
+
 
 ## Paper
 
