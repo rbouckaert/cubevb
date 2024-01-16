@@ -1,4 +1,4 @@
-<package name='CubeVB' version='1.0.0'>
+<package name='CubeVB' version='1.0.1'>
 	<depends on='BEAST.base' atleast='2.7.0'/>
 	<depends on='BEAST.app' atleast='2.7.0'/>
 
@@ -9,6 +9,17 @@
             />
 	    <packageapp description="Trees2SummaryTree"
               class="cubevb.tool.Trees2SummaryTree"
+              args=""
+              icon=""
+            />
+
+	    <packageapp description="Cube tree viewer"
+              class="cubevb.tool.CubeTreeViewer"
+              args=""
+              icon=""
+            />
+	    <packageapp description="Matrix tree viewer"
+              class="cubevb.tool.MatrixTreeViewer"
               args=""
               icon=""
             />
