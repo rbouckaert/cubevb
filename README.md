@@ -9,7 +9,7 @@ It also contains a Matrix based summary tree topology provider that works with T
 
 Install [BEAST 2](http://beast2.org).
 
-Download [CubeVB.v1.0.1.zip](https://github.com/rbouckaert/cubevb/releases/download/v1.0.0/CubeVB.v1.0.1.zip). 
+Download [CubeVB.v1.0.2.zip](https://github.com/rbouckaert/cubevb/releases/download/v1.0.0/CubeVB.v1.0.2.zip). 
 Then, create a CubeVB subdirectory:
 
 ```
@@ -19,7 +19,7 @@ for Linux /home/<YourName>/.beast/2.7/CubeVB
 ```
 
 Here `<YourName>` is the username you use.
-Unzip the file [CubeVB.v1.0.0.zip](https://github.com/rbouckaert/cubevb/releases/download/v1.0.0/CubeVB.v1.0.1.zip) in the newly created directory.
+Unzip the file [CubeVB.v1.0.2.zip](https://github.com/rbouckaert/cubevb/releases/download/v1.0.0/CubeVB.v1.0.2.zip) in the newly created directory.
 
 
 ## Build from code
