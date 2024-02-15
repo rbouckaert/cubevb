@@ -44,6 +44,10 @@
         <provider classname="cubevb.transform.StickBreaking"/>
         <provider classname="cubevb.transform.SubRealParameter"/>
         <provider classname="cubevb.transform.UpperBound"/>
+        
+        <provider classname="cubevb.transform.DistanceCubeOrderer"/>
+        <provider classname="cubevb.transform.RandomCuberOrder"/>
+        
         <provider classname="cubevb.treelikelihood.BeagleTreeLikelihood"/>
         <provider classname="cubevb.treelikelihood.SubsampledTreeLikelihood"/>
         <provider classname="cubevb.treelikelihood.TreeLikelihood"/>

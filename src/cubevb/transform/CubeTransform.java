@@ -17,17 +17,14 @@ import beast.base.evolution.tree.Tree;
 import beast.base.evolution.tree.TreeInterface;
 import beast.base.evolution.tree.TreeUtils;
 import beast.base.util.Randomizer;
-//import sphericalGeo.GreatCircleDistance;
-//import sphericalGeo.LocationProvider;
 
 @Description("Represents a tree as a cube through a RealParameter")
 public class CubeTransform extends Transform {
 	final public Input<TreeInterface> treeInput = new Input<>("tree", "phylogenetic beast.tree with sequence data in the leafs", Validate.REQUIRED);
 	final public Input<String> orderInput = new Input<>("order", "comma separated list of taxa names in tree in desirded cube order. If not specified, a location "
 			+ "provider is used, and if that is not specified either, a random order is used.");
-//    final public Input<LocationProvider> locationInput = new Input<>("location", "location provider for informing cube order. Should not be used when order is "
-//    		+ "already specified.");
- 	
+	final public Input<CubeOrderer> cubeOrdereInput = new Input<>("cubeOrderer", "method for finidng order of cube", new RandomCuberOrder());
+  
 	protected TreeInterface tree;
 	protected int [] order;
 	protected int [] inverseorder;
@@ -86,28 +83,12 @@ public class CubeTransform extends Transform {
 	public double[] forward() {
 		double [] heights = new double[parameter.getDimension()];
 		if (order == null) {
-			Node [] internalNodes = new Node[tree.getLeafNodeCount() - 1];
-			order = new int[tree.getNodeCount()];
-//			if (locationInput.get() != null) {
-//				LocationProvider d = locationInput.get();
-//				// mark all state nodes dirty to guarantee recaclculation of  
-//				for (BEASTInterface o : ((BEASTInterface)tree).getOutputs()) {
-//					if (o instanceof State) {
-//						State state = (State) o;
-//						state.setEverythingDirty(true);
-//						state.checkCalculationNodesDirtiness();
-//					}
-//				}
-//				
-//				orderByDistance(tree.getRoot(), order, heights, new int[]{0}, internalNodes, d);
-//			} else {
-				// random order consistent with tree
-				getCube(tree.getRoot(), order, heights, new int[]{0}, internalNodes);
-//			}
-				inverseorder = new int[tree.getNodeCount()];
-				for (int i = 0; i < order.length; i++) {
-					inverseorder[order[i]] = i;
-				}
+			
+			order = cubeOrdereInput.get().order(tree, heights);
+			inverseorder = new int[tree.getNodeCount()];
+			for (int i = 0; i < order.length; i++) {
+				inverseorder[order[i]] = i;
+			}
 		} else {		
 			tree2Cube(order, tree, heights);
 		}
@@ -116,8 +97,6 @@ public class CubeTransform extends Transform {
 		}
 		return heights;
 	}
-	
-	
 	
 //	protected void orderByDistance(Node node, int [] order, double [] heights, int [] index, 
 //			Node [] internalNodes, LocationProvider d) {
@@ -157,33 +136,7 @@ public class CubeTransform extends Transform {
 //		}		
 //	}
 
-	/** recursively determines order of tree compatible with (random) planar drawing of the tree 
-	 * @param node current node in tree
-	 * @param order is populated with ordering of leaf nodes
-	 * @param heights of the cube
-	 * @param index keeps track of next order index to add
-	 * @param internalNodes nodes for which heights are recorded
-	 */
-	protected void getCube(Node node, int [] order, double [] heights, int [] index, Node [] internalNodes) {
-		if (node.isLeaf()) {
-			order[index[0]] = node.getNr();
-		} else {
-			Node first = null, second = null;
-			if (Randomizer.nextBoolean()) {
-				first = node.getChild(0);
-				second = node.getChild(1);
-			} else {
-				first = node.getChild(1);
-				second = node.getChild(0);
-			}
-			getCube(first, order, heights, index, internalNodes);
-			heights[index[0]] = node.getHeight();
-			internalNodes[index[0]] = node;
-			order[index[0]+tree.getLeafNodeCount()] = node.getNr();
-			index[0]++;
-			getCube(second, order, heights, index, internalNodes);
-		}		
-	}
+
 	
 	
 	protected void tree2Cube(int[] order, TreeInterface tree, double[] heights) {

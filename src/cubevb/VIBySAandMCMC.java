@@ -57,7 +57,8 @@ public class VIBySAandMCMC extends Runnable {
 
     final public Input<Double> alphaInput = new Input<>("learningRate", "learning rate for SGD", 1e-8);
     
-    final public Input<Integer> chainLengthInput = new Input<>("chainLength", "expected number of MCMC samples per parameter for initialisation", 64);
+    final public Input<Integer> chainLengthInput = new Input<>("chainLength", "expected number of MCMC samples per parameter for learning correlation matrix", 64);
+    final public Input<Integer> burninInput = new Input<>("burnin", "expected number of MCMC samples per parameter for burnin", 0);
     
 	final public Input<Boolean> useCorrelationsInput = new Input<>("useCorrelations", "if true, use correlations between " +
 			"consecutive parameter entries", true);
@@ -311,6 +312,7 @@ public class VIBySAandMCMC extends Runnable {
 				"operator", operatorsInput.get(),
 				"logger", screenLogger,
 				"chainLength", (long)(mean.length * chainLength),
+				"preBurnin", (mean.length * burninInput.get()),
 				"operatorschedule", operatorschedule);
 		
 		try {
@@ -380,7 +382,9 @@ public class VIBySAandMCMC extends Runnable {
 		System.arraycopy(mean, 0, values, 0, mean.length);
 		double oldLogP = logP0;
 		double oldJacobian = jacobian;
-		for (long j = 1; j <= chainLength * mean.length; j++) {
+		
+		long burnin = burninInput.get();
+		for (long j = - burnin * mean.length; j <= chainLength * mean.length; j++) {
 			int i = Randomizer.nextInt(mean.length);
 			double s = Randomizer.nextGaussian();
 			double oldValue = values[i];			
@@ -416,7 +420,7 @@ public class VIBySAandMCMC extends Runnable {
 //			sampleCount[i]++;
 
 			
-			if (j % mean.length == 0) {
+			if (j > 0 && j % mean.length == 0) {
 				int x = (int) (j/mean.length-1);
 				for (int k = 0; k < mean.length; k++) {
 					trace[k][x] = values[k];
@@ -425,7 +429,7 @@ public class VIBySAandMCMC extends Runnable {
 //					log.log(log.everyInput.get() * (j / mean.length - 1));
 //				}
 			}
-			if (j % chainLength == 0) {
+			if (j > 0 && j % chainLength == 0) {
 				if (j % (10*chainLength) != 0) {
 					Log.warning.print('.');
 				} else {
@@ -495,13 +499,27 @@ public class VIBySAandMCMC extends Runnable {
 //			}
 //		}
 		System.out.println("mean = " + Arrays.toString(mean));
-		
+
 		DecimalFormat df = new DecimalFormat("#.####");
+		System.out.print("sigma = [");
+//		double min = Double.POSITIVE_INFINITY;
+//		for (int i = 0; i < n; i++) {
+//			if (covar0[i][i] > 0) {
+//				min = Math.min(min, covar0[i][i]);
+//			}
+//		}
+//		double min = 0.001;
+		for (int i = 0; i < n; i++) {
+//			covar0[i][i] = Math.max(min, covar0[i][i]);
+			System.out.print(df.format(covar0[i][i])+" ");
+		}
+		System.out.println("]\n");
+		
 		for (int i = 0; i < covar0.length; i++) {
 			System.out.print("[");
 			for (int j = 0; j < covar0.length; j++) {
 				String str = df.format(covar0[i][j]/(Transform.softplus(stdev[i])*Transform.softplus(stdev[j])));
-				System.out.print("       ".substring(str.length()) + str);
+				System.out.print("       ".substring(Math.min(str.length(), 7)) + str);
 			}
 			System.out.print(" ]\n");
 		}
