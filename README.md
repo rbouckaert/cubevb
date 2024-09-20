@@ -62,8 +62,10 @@ To launch, use the applauncher tool that comes with BEAST, or via the BEAUti usi
 ## Paper
 
 Remco R. Bouckaert.
-Variational Bayesian Phylogenies through Matrix Representation of Tree Space
-2023 (https://www.biorxiv.org/content/10.1101/2023.10.19.563180).
+Variational Bayesian Phylogenies through Matrix Representation of Tree Space.
+[PeerJ 12, e17276](https://peerj.com/articles/17276/) 2024 
+[doi](https://doi.org/10.7717/peerj.17276)
+[BioRxiv preprint](https://www.biorxiv.org/content/10.1101/2023.10.19.563180) 2023.
 
 ## Data
 
