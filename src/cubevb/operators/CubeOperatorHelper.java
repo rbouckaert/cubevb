@@ -1,6 +1,8 @@
 package cubevb.operators;
 
+
 import java.util.Map;
+
 import java.util.HashMap;
 
 import beast.base.evolution.tree.Node;
@@ -27,22 +29,14 @@ public class CubeOperatorHelper {
     	boolean [] done = new boolean[tree.getNodeCount()];
     	Node current = tree.getNode(order[0]);
     	done[current.getNr()] = true;
-    	for (int i = 1; i < tree.getLeafNodeCount()-1; i++) {
-    		Node n = tree.getNode(order[i]);
-        	done[n.getNr()] = true;
-    		Node p = n.getParent();
-    		Node other = otherChild(p, n);
-        	do {
-        		p = n.getParent();
-        		if (p != null) {
-        			other = otherChild(p, n);
-        			n = p;
-        		}
-        	} while (!done[other.getNr()] && p != null);
-        	if (!done[other.getNr()] || p == null) {
-        		return false;
-        	}
-        	done[n.getNr()] = true;
+    	for (int i = 0; i < order.length - 1; i++) {
+    		Node n1 = tree.getNode(order[i]);
+    		Node n2 = tree.getNode(order[i-1]);
+    		Node mrca = getCommonAncestor(n1, n2);
+    		if (done[mrca.getNr()]) {
+    			return false;
+    		}
+    		done[mrca.getNr()] = true;
     	}
     	
     	// for debugging:
@@ -53,6 +47,51 @@ public class CubeOperatorHelper {
     	
     	return true;
 	}
+	
+    protected Node getCommonAncestor(Node n1, Node n2) {
+        // assert n1.getTree() == n2.getTree();
+        while (n1 != n2) {
+	        double h1 = n1.getHeight();
+	        double h2 = n2.getHeight();
+	        if ( h1 < h2 ) {
+	            n1 = n1.getParent();
+	        } else if( h2 < h1 ) {
+	            n2 = n2.getParent();
+	        } else {
+	            //zero length branches hell
+	            Node n;
+	            double b1 = n1.getLength();
+	            double b2 = n2.getLength();
+	            if( b1 > 0 ) {
+	                n = n2;
+	            } else { // b1 == 0
+	                if( b2 > 0 ) {
+	                    n = n1;
+	                } else {
+	                    // both 0
+	                    n = n1;
+	                    while( n != null && n != n2 ) {
+	                        n = n.getParent();
+	                    }
+	                    if( n == n2 ) {
+	                        // n2 is an ancestor of n1
+	                        n = n1;
+	                    } else {
+	                        // always safe to advance n2
+	                        n = n2;
+	                    }
+	                }
+	            }
+	            if( n == n1 ) {
+                    n = n1 = n.getParent();
+                } else {
+                    n = n2 = n.getParent();
+                }
+	        }
+        }
+        return n1;
+    }
+
 	
 	private Map<Integer, Integer> initMap() {
 		int [] order = transform.getOrder();
